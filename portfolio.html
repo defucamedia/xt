@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Xiaotunes | Portfolio</title>
+		<link href="/content/css/skin/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="/content/css/style.css" />		
+		<!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="/content/css/ie.css" />
+		<![endif]-->
+		<!--[if lte IE 7]>
+			<link rel="stylesheet" type="text/css" href="/content/css/ie7.css" />
+		<![endif]-->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<script type="text/javascript" src="/content/javascript/jquery.bbq.min.js"></script>
+		<script type="text/javascript" src="/content/javascript/jquery.jplayer.min.js"></script>
+		<script type="text/javascript" src="/content/javascript/js.js"></script>
+	</head>
+	<body>
+		<div id="topBlock" class="block"></div>
+		<div id="hax"></div>
+		<div id="container">
+			<div id="header">
+				<h1>Christopher Xiao | </h1>
+				<h2>Music composer</h2>
+			</div>
+			<div id="content">
+				<div id="nav" class="orange">
+					<ul>
+						<li><a href="/biography.html">Biography</a></li>
+						<li><a href="/clients.html">Clients</a></li>
+						<li><a href="/portfolio.html">Portfolio</a></li>
+						<li><a href="/contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id="top" class="grey">
+					<h2>Portfolio</h2>
+					<div id="jPlayer"></div>
+					<div class="jp-playlist-player">
+						
+						<h3>Portfolio List</h3>
+						<table id="jplayer_playlist" class="jp-playlist">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Project</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<h3>Currently Playing</h3>
+						<div id="jplayer_current">
+							<span>No audio selected</span>
+							<div class="jp-progress">
+								<div id="jplayer_load_bar" class="jp-load-bar">
+									<div id="jplayer_play_bar" class="jp-play-bar"></div>
+								</div>
+							</div>
+						</div>
+						<div class="jp-interface">
+							<ul class="jp-controls">
+								<li><a href="javascript:void(0)" id="jplayer_play" class="jp-play" tabindex="1">play</a></li>
+								<li><a href="javascript:void(0)" id="jplayer_pause" class="jp-pause" tabindex="1">pause</a></li>
+								<li><a href="javascript:void(0)" id="jplayer_stop" class="jp-stop" tabindex="1">stop</a></li>
+								<li><a href="javascript:void(0)" id="jplayer_previous" class="jp-previous" tabindex="1">previous</a></li>
+								<li><a href="javascript:void(0)" id="jplayer_next" class="jp-next" tabindex="1">next</a></li>
+							</ul>
+							<div id="jplayer_volume_bar" class="jp-volume-bar">
+								<div id="jplayer_volume_bar_value" class="jp-volume-bar-value"></div>
+							</div>
+						</div>
+<input type="checkbox" id="continous" name="continous" /><label for="continous">Continous</label>
+					</div>
+					<script type="text/javascript">
+						var playItem = 0;
+
+						var myPlayList = [
+							{name:"Tempered Song",mp3:"http://www.miaowmusic.com/audio/mp3/Miaow-01-Tempered-song.mp3",ogg:"http://www.miaowmusic.com/audio/ogg/Miaow-01-Tempered-song.ogg"},
+							{name:"Hidden",mp3:"http://www.miaowmusic.com/audio/mp3/Miaow-02-Hidden.mp3",ogg:"http://www.miaowmusic.com/audio/ogg/Miaow-02-Hidden.ogg"},
+							{name:"Lentement",mp3:"http://www.miaowmusic.com/audio/mp3/Miaow-03-Lentement.mp3",ogg:"http://www.miaowmusic.com/audio/ogg/Miaow-03-Lentement.ogg"},
+							{name:"Lismore",mp3:"http://www.miaowmusic.com/audio/mp3/Miaow-04-Lismore.mp3",ogg:"http://www.miaowmusic.com/audio/ogg/Miaow-04-Lismore.ogg"},
+							{name:"The Separation",mp3:"http://www.miaowmusic.com/audio/mp3/Miaow-05-The-separation.mp3",ogg:"http://www.miaowmusic.com/audio/ogg/Miaow-05-The-separation.ogg"},
+							{name:"Beside Me",mp3:"http://www.miaowmusic.com/audio/mp3/Miaow-06-Beside-me.mp3",ogg:"http://www.miaowmusic.com/audio/ogg/Miaow-06-Beside-me.ogg"},
+							{name:"Bubble",mp3:"http://www.miaowmusic.com/audio/mp3/Miaow-07-Bubble.mp3",ogg:"http://www.miaowmusic.com/audio/ogg/Miaow-07-Bubble.ogg"}
+						];
+
+						//var jpPlayTime = $("#jplayer_play_time");
+						//var jpTotalTime = $("#jplayer_total_time");
+						var $jPlayer = $("#jPlayer");
+
+						$jPlayer.jPlayer({
+							swfPath: "/content",
+							ready: function() {
+								siteOptions.$jPlayer = $jPlayer;
+								displayPlayList();
+								playListInit(false); // Parameter is a boolean for autoplay.
+							},
+							oggSupport: true
+						})
+						//.jPlayer("onProgressChange", function(loadPercent, playedPercentRelative, playedPercentAbsolute, playedTime, totalTime) {
+						//	jpPlayTime.text($.jPlayer.convertTime(playedTime));
+						//	jpTotalTime.text($.jPlayer.convertTime(totalTime));
+						//})
+						.jPlayer("onSoundComplete", function() {
+							playListNext();
+						});
+
+						$("#jplayer_previous").click(function() {
+							playListPrev();
+							$(this).blur();
+							return false;
+						});
+
+						$("#jplayer_next").click(function() {
+							playListNext();
+							$(this).blur();
+							return false;
+						});
+
+						function displayPlayList() {
+							var $playlist = $("#jplayer_playlist tbody");
+							$playlist.find("tr").remove();
+
+							for (var i = 0; i < myPlayList.length; i++) {
+								var item = (i == myPlayList.length - 1) ? "<tr><td class='jplayer_playlist_item_last'>" : "<tr><td>";
+								item += "<a href='javascript:void(0)' id='jplayer_playlist_item_" + i + "' tabindex='1'>"+ myPlayList[i].name + "</a></td><td>" + myPlayList[i].project + "</td></tr>";
+								$playlist.append(item);
+								$("#jplayer_playlist_item_" + i).data("index", i).click( function() {
+									var index = $(this).data("index");
+
+									if (playItem != index)
+										playListChange(index);
+									else 
+										$jPlayer.jPlayer("play");
+									
+									$(this).blur();
+									return false;
+								});
+							}
+
+							/*$("#jplayer_playlist ul").empty();
+							for (i=0; i < myPlayList.length; i++) {
+								var listItem = (i == myPlayList.length-1) ? "<li class='jplayer_playlist_item_last'>" : "<li>";
+								listItem += "<a href='javascript:void(0)' id='jplayer_playlist_item_"+i+"' tabindex='1'>"+ myPlayList[i].name +"</a></li>";
+								$("#jplayer_playlist ul").append(listItem);
+								$("#jplayer_playlist_item_"+i).data( "index", i ).click( function() {
+									var index = $(this).data("index");
+									if (playItem != index) {
+										playListChange( index );
+									} else {
+										$jPlayer.jPlayer("play");
+									}
+									$(this).blur();
+									return false;
+								});
+							}*/
+						}
+
+						function playListInit(autoplay) {
+							if(autoplay) 
+								playListChange(playItem);
+							else
+								playListConfig(playItem);
+						}
+
+						function playListConfig(index) {
+							$("#jplayer_playlist_item_" + playItem).removeClass("jplayer_playlist_current").parent().removeClass("jplayer_playlist_current");
+							$("#jplayer_playlist_item_" + index).addClass("jplayer_playlist_current").parent().addClass("jplayer_playlist_current");
+							playItem = index;
+							$jPlayer.jPlayer("setFile", myPlayList[playItem].mp3, myPlayList[playItem].ogg);
+						}
+
+						function playListChange(index) {
+							playListConfig(index);
+							$("#jplayer_current > span").html(myPlayList[index].name);
+							$jPlayer.jPlayer("play");
+						}
+
+						function playListNext() {
+							var index = (playItem + 1 < myPlayList.length) ? playItem + 1 : 0;
+							playListChange(index);
+						}
+
+						function playListPrev() {
+							var index = (playItem - 1 >= 0) ? playItem - 1 : myPlayList.length - 1;
+							playListChange(index);
+						}
+					</script>
+				</div>
+				
+			</div>
+			<div id="footer">
+				<a id="dfm" href="http://www.defucamedia.com"></a>
+			</div>
+		</div>
+		<div id="bottomBlock" class="block"></div>
+	</body>
+</html>

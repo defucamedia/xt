@@ -1,0 +1,320 @@
+@font-face {
+	font-family: 'BitstreamVeraSansRoman';
+	src: url('/content/fonts/Vera-webfont.eot');
+	src: local('☺'), url('/content/fonts/Vera-webfont.woff') format('woff'), url('/content/fonts/Vera-webfont.ttf') format('truetype'), url('/content/fonts/Vera-webfont.svg#webfontHBSQ3oqr') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'BitstreamVeraSansOblique';
+	src: url('/content/fonts/Vera-Italic-webfont.eot');
+	src: local('☺'), url('/content/fonts/Vera-Italic-webfont.woff') format('woff'), url('/content/fonts/Vera-Italic-webfont.ttf') format('truetype'), url('/content/fonts/Vera-Italic-webfont.svg#webfontWP43HMd4') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	width: 100%;
+	font-size:100.01%;
+}
+
+body {
+	background: #333333;
+    	background: -moz-linear-gradient(-30deg, #333333, #000000);
+    	background: -webkit-gradient(linear, left top, right bottom, from(#333333), to(#000000));
+    	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#333333', EndColorStr='#000000', GradientType=1);
+	text-align: center;
+	color: white;
+	font-size: 1em;
+}
+
+a {
+	color: white;
+}
+
+img {
+	border: 0;
+}
+
+h3 {
+	text-transform: uppercase;
+	margin: 1em 0 0 0;
+	font-size: 1.2em;
+}
+
+#topBlock {
+	top: 0;
+	right: 0;
+}
+
+#hax {
+	width: 1px;
+	height: 50%;
+	margin-bottom: -15.5em; /* half of container's height */
+	float: left;
+}
+
+#container {
+	width: 56.25em;
+	margin: auto;
+	clear: left;
+	text-align: left;
+	position: relative;
+	height: 31em;
+}
+
+#header {
+	color: white;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	font-family: 'BitstreamVeraSansRoman';
+}
+
+#header h1, #header h2 {
+	display: inline;
+}
+
+#header a {
+	text-decoration: none;
+}
+
+#content {
+	-moz-box-shadow: 0 0 .5em #000;
+	-webkit-box-shadow: 0 0 .5em #000;	
+	box-shadow: 0 0 .5em #000;
+}
+
+#top {
+	
+	font-family: Tahoma, Verdana, sans-serif;
+	padding: 0 1em 0 1em;
+	position: relative;
+	height: 22em;
+	padding-top: 1em;
+}
+
+#top h2 {
+	margin: 0;
+	font-size: 1.2em;
+	border-left: solid white .5em;
+	position: absolute;
+	left: 0;
+	top: 1em;
+	border-left: solid white .5em;
+	padding-left: .5em;
+	font-family: 'BitstreamVeraSansRoman';
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+#top p {
+	margin: 0 0 1em 0;
+	line-height: 1.2em;
+}
+
+#top p:last-child {
+	margin-bottom: 0;
+}
+
+#top h2 ~ * {
+	margin-top: 2.2em;
+}
+
+.next, .prev {
+	background-color: white;
+	padding: 1em .2em 1em .2em;
+	position: absolute;
+	bottom: 0;
+	left: -1.4em;
+	width: 1em;
+	color: black;
+	text-decoration: none;
+	font-family: Terminal;
+	text-align: center;
+	z-index: 1000;
+}
+
+.next {
+	left: auto;
+	right: -1.4em;
+	clear: both;
+}
+
+.disabled {
+	background-color: grey;
+	filter: alpha(opacity=70);
+	-ms-filter: "alpha(opacity=70)";
+	-khtml-opacity: .7;
+	-moz-opacity: .7;
+	opacity: .7;
+}
+
+#nav {
+	width: 100%;
+	padding: 1em 0 1em 0;
+	text-align: right;
+}
+
+#nav ul {
+	display: inline-block;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	background-color: #222222;
+}
+
+#nav ul li {
+	display: inline;
+	padding: 0;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+#nav ul li a {
+	display: inline-block;
+	padding: .6em 1.5em .6em 1.5em;
+	background-color: #222222;
+	text-decoration: none;
+	font-family: 'BitstreamVeraSansRoman';
+}
+
+#nav ul li a.current {
+	color: grey;
+}
+
+#nav ul li a:hover {
+	text-decoration: underline;
+}
+
+#footer {
+	margin-top: .6em;
+	text-align: right;
+}
+
+#dfm {
+	background-image: url("/content/images/dfm.png");
+	background-position: right;
+	background-repeat: no-repeat;
+	height: 21px;
+	width: 53px;
+	display: inline-block;
+}
+
+#bottomBlock {
+	bottom: 0;
+	left: 0;
+}
+
+#clients {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	height: 100%;
+}
+
+#clients li {
+	display: block;
+	float: left;
+	width: 33%;
+	height: 33%;
+	text-align: center;
+	
+}
+
+#clients li a {
+	display: block;
+	filter: alpha(opacity=70);
+	-ms-filter: "alpha(opacity=70)";
+	-khtml-opacity: .7;
+	-moz-opacity: .7;
+	opacity: .7;
+	height: 100%;
+}
+
+#clients li a img {
+	vertical-align: middle;
+}
+
+#clients li a:hover {
+	filter: alpha(opacity=100);
+	-ms-filter: "alpha(opacity=100)";
+	-khtml-opacity: 1;
+	-moz-opacity: 1;
+	opacity: 1;
+}
+
+
+
+.contentItem {
+	height: 19em;
+}
+
+.col {
+	float: left;
+	width: 26.6em;
+}
+
+h2 + .col {
+	margin-right: 1em;
+}
+
+.col img:first-child {
+	margin: auto;
+	border: solid 1px grey;
+	display: block;
+}
+
+#top p.special {
+	text-align: center;
+	margin: 2em 0 2em 0;
+}
+
+p.special a {
+	color: #D64D11;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+p.special a:hover {
+	text-decoration: underline;
+}
+
+.block {
+	width: 9.5em;
+	height: 2.5em;
+	background-color: #D64D11;
+	position: absolute;
+}
+
+.orange {
+	background: #D64D11;
+    	background: -moz-linear-gradient(left, #D64D11, #DF6530);
+    	background: -webkit-gradient(linear, left top, right top, from(#D64D11), to(#DF6530));
+    	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#D64D11', EndColorStr='#DF6530', GradientType=1);
+}
+
+.orange h2 {
+	color: black;
+}
+
+.grey {
+	background: #212121;
+    	background: -moz-linear-gradient(left, #212121, #222222);
+    	background: -webkit-gradient(linear, left top, right top, from(#212121), to(#222222));
+    	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#212121', EndColorStr='#222222', GradientType=1);
+}
+
+.loading {
+	width: 16px;
+	height: 16px;
+	background-color: #D64D11;
+	background-image: url("/content/images/ajaxLoader.gif");
+	background-repeat: no-repeat;
+	display: none;
+	top: .8em;
+	position: relative;
+	margin: auto;
+}
