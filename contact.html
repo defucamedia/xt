@@ -14,17 +14,19 @@
 				<h2>Music Composer.</h2>
 			</header>
 			<section id="content">
-				<form action="" method="post">
-					<label for="name">NAME</label>
+				<form action="formmail.php" method="post">
+					<label for="name">Name</label>
 					<input type="text" name="name" />
 
-					<label for="email">E-MAIL</label>
+					<label for="email">E-Mail</label>
 					<input type="text" name="email" />
 
-					<label for="message">MESSAGE</label>
+					<label for="message">Message</label>
 					<textarea name="message"></textarea>
 
 					<input type="submit" value="Send" />
+					<input type="hidden" name="subject" value="Conact Form" />
+					<input type="hidden" name="recipients" value="cxiao@xiaotunes.net" />
 				</form>
 				<aside>
 					<h1>Demo</h1>
