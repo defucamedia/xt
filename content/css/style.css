@@ -8,7 +8,7 @@
 }
 
 #contact {
-	margin: 2em;
+	margin: 2.5em;	
 }
 
 #contact a {
@@ -30,6 +30,11 @@ body {
 	font-family: Georgia, "Nimbus Roman No9 L", "Century Schoolbook L", Norasi, Rekha, serif;
 }
 
+header {
+	margin-top: 15%;
+	margin-bottom: 4em;
+}
+
 header a {
 	text-decoration: none;
 	color: #999999;
@@ -37,8 +42,10 @@ header a {
 
 header h2 {
 	float: left;
-	margin: 0 0 1em 0;
+	margin: 0 .4em 1em .3em;
 	font-size: 1.2em;
+	color: #eeeeee;
+	font-weight: 500;
 }
 
 header h2:last-child {
@@ -50,16 +57,26 @@ section {
 	clear: both;
 }
 
+section  h1 {
+	text-align: center;
+	clear: both;
+}
+
 header h1 {
 	display: inline-block;
 	width: 100%;
 	margin: 0;
 	text-align: center;
-	font-size: 3em;
+	font-size: 2.8em;
+	text-transform: uppercase; 
+	font-weight: normal;
+	text-shadow: #999 0px 0px 1px;
 }
 
 header h1 span {
 	color: #cccccc;
+	font-size: 1.2em;
+	text-shadow: #CCC 0px 0px 1px;
 }
 
 h1 {
@@ -75,6 +92,7 @@ ul {
 
 ul li {
 	display: inline;
+	color: #999999
 }
 
 ul li:after {
@@ -97,7 +115,7 @@ input, label, textarea {
 
 label {
 	padding: 0.5em 0 0.2em 0;
-	font-weight: bold;
+	font-weight: 500;
 }
 
 input, textarea {
@@ -130,12 +148,19 @@ input[type=submit]:hover {
 }
 
 aside {
+	text-align: center;
 	margin-top: 3em;
+	color: #999999;
 }
+
+aside h1 {
+	color: #ffffff;
+}
+
 
 footer {
 	text-align: center;
-	font-size: smaller;
+	font-size: .6em;
 	color: #999999;
 	margin-top: 5em;
 }
