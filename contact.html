@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Xiaotunes</title>
+		<title>Xiaotunes - Contact</title>
 		<link rel="stylesheet" type="text/css" media="screen" href="/content/css/style.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="/content/js/history.min.js"></script>
+		<script type="text/javascript" src="/content/js/main.js"></script>
 	</head>
 	<body>
+		<div id="loading"></div>
 		<div id="container">
 			<header>
 				<h1>
@@ -13,30 +17,32 @@
 				<h2>Vancouver, BC</h2>
 				<h2>Music Composer.</h2>
 			</header>
-			<section id="content">
-				<form action="formmail.php" method="post">
-					<label for="name">Name</label>
-					<input type="text" name="name" />
+			<div>
+				<section id="content">
+					<form action="formmail.php" method="post">
+						<label for="name">Name</label>
+						<input type="text" name="name" />
 
-					<label for="email">E-Mail</label>
-					<input type="text" name="email" />
+						<label for="email">E-Mail</label>
+						<input type="text" name="email" />
 
-					<label for="message">Message</label>
-					<textarea name="message"></textarea>
+						<label for="message">Message</label>
+						<textarea name="message"></textarea>
 
-					<input type="submit" value="Send" />
-					<input type="hidden" name="subject" value="Conact Form" />
-					<input type="hidden" name="recipients" value="cxiao@xiaotunes.net" />
-				</form>
-				<aside>
-					<h1>Demo</h1>
-					<p>
-						Due to having a large portfolio, please contact me with the form above for a personalized demo. My musical portfolio ranges from passionate orchestral to energized synthetic. Please do not hesitate to provide as much detail as possible.
-					</p>
-				</aside>
-			</section>
+						<input type="submit" value="Send" />
+						<input type="hidden" name="subject" value="Conact Form" />
+						<input type="hidden" name="recipients" value="cxiao@xiaotunes.net" />
+					</form>
+					<aside>
+						<h1>Demo</h1>
+						<p>
+							Due to having a large portfolio, please contact me with the form above for a personalized demo. My musical portfolio ranges from passionate orchestral to energized synthetic. Please do not hesitate to provide as much detail as possible.
+						</p>
+					</aside>
+				</section>
+			</div>
 			<footer>
-				Website Design By: <a href="http://defucamedia.com">De Fuca Media</a>
+				Website Design By: <a href="http://defucamedia.com" data-rel="external">De Fuca Media</a>
 			</footer>
 		</div>
 	</body>

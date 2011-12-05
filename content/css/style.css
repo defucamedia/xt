@@ -24,6 +24,17 @@
 	color: #2696f5;
 }
 
+#loading {
+	display: none;
+	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 31px;
+	height: 31px;
+	background-image: url("/content/images/ajax-loader.gif");
+}
+
 body {
 	background-color: #000000;
 	color: #cccccc;
